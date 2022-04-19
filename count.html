@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+	<title>Document</title>
+	<style type="text/css">
+		*{padding: 0; margin: 0;font-family: 'Josefin Sans', sans-serif;}
+		div{
+			height: 100vh; display: flex; justify-content: center; align-items:  center;
+			flex-direction: column;
+		}
+		textarea{
+			border: 2px solid #0984e3; border-radius: 10px; outline: none; font-size: 1.2rem; padding: 10px 2px; box-shadow: 0 0 4px 1px #b2bec3;
+		}
+		button{
+			padding: 20px 30px; background-color: #74b9ff; color: white; border-radius: 10px; border: 2px solid #0984e3;
+			font-size: 1.2rem; outline: none;
+		}
+		p{
+			color: #0984e3; font-size: 1.2rem;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<textarea cols="50" rows="10" id="words">
+			
+		</textarea>
+		<br>
+		<p id="shwodata"></p>
+		<p id="showords"></p>
+		<br>
+		<button onclick="countwords()">Count Char</button>
+	</div>
+	<script type="text/javascript">
+		 const countwords = ()=>{
+		 	let noc = document.getElementById('words').value.length;
+		 	let now = document.getElementById('words').value;
+
+            if(now.replace(/\s/g, "").length <= 0){
+            	alert("No whitespace allowed");
+            }else{
+            now = now.match( /\w+/g );
+		 	now = now.length;
+		 	document.getElementById('shwodata').innerHTML = "The TotalCharacters = " + noc;
+		 	document.getElementById('showords').innerHTML = "the total words are = " + now;
+
+            }
+
+		 	
+		 	
+		 }
+	</script>
+	
+</body>
+</html>
